@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>task_list</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script type="text/javascript">
+		
+		var taskList = {taskItem: [], time: []};
+		var input = [];
+		 
+		do {
+		  var task = prompt('Добавить задание по шаблону "что сделать" в "время"', '');
+		  var c = confirm("Будете добавлять еще задания?");
+		  input.push(task);
+		} while (c !== false);
+		 
+		for(var i=0; i<input.length; i++){
+		  var __ = input[i].split(" в ");
+		  taskList.taskItem.push(__[0]);
+		  taskList.time.push(__[1]);
+		  console.log(taskList.taskItem[i] + ": " + taskList.time[i]);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>TASK#2_EX#2</title>
+</head>
+<body>
+	<h1 id="todayHTML"></h1>
+	<h2 id="timeHTML"></h2>
+	<script type="text/javascript">
+		//Нужно вывести время и дату
+	var today = new Date();
+	var day = today.getDay();
+	var daylist = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
+	var hour = today.getHours();
+	var min = today.getMinutes();
+
+	var suffix = (hour >= 12)? " PM" : " AM";
+	hour = (hour >= 12)? hour - 12 : hour;
+
+	if (hour === "0" && suffix === " PM"){
+	  if(min === "0" && sec === "0") {
+	    hour = 12;
+	    suffix = " Noon";
+	  }
+	} 
+	else if (hour === "0" && suffix === " AM") {
+	  if(min === "0" && sec === "0") {
+	    hour = 12;
+	    suffix = " Midnight";
+	  }
+	}
+
+	var todayHTML = document.getElementById("todayHTML");
+	var timeHTML = document.getElementById("timeHTML");
+
+	todayHTML.innerHTML = "Today is : " + daylist[day];
+	timeHTML.innerHTML = "Current time is : " + hour + suffix + ":"  + min;
+		//Развернуть ряд
+	function reverse_a_number(i)
+		{
+		i = i + "";
+		return i.split("").reverse().join("");
+		}
+	console.log(reverse_a_number(32243));
+			//факториал
+	var b=prompt('faktorial');
+	var a=1
+	for (var i=1; i<=b ;i++)
+	a*=i
+	document.write(a)
+		// сравнить два числа и вывести большее
+				var userInput1 = prompt("Enter an integer: ");
+	var userInput2 = prompt("Enter another integer: ");
+
+	if(userInput1 > userInput2){
+	document.write("The larger integer is " + userInput1);
+	}else if (userInput1 < userInput2){
+	document.write("The larger integer is " + userInput2);
+	}else{
+	document.write("The numbers are equal");
+	}
+			//Объеденить элементы следующего массива в строку
+	function j(str){
+  var r = str.toString()
+  var p = str.join(",");
+  var k = str.join('+');
+	console.log(r)
+	console.log(p)
+	console.log(k)
+  }
+	j(["red","blue","green","yellow"])
+			//Получить названия месяца с определенной даты
+		function ex4 (d) {
+	var month = ["January", "February", "March", "April", "May", "June",
+	"July", "August", "September", "October", "November", "December"
+	];
+	var skit = [];
+	skit = month[new Date(d).getMonth()];
+	return skit;
+	}
+
+	console.log(ex4("10/11/2009"));
+	console.log(ex4("11/13/2014"));
+	  		//проверить является ли первый символ прописным
+		  function one(str){
+	return /[A-Z]/.test(str[0]);
+	};
+	console.log(one('aaaa'));
+	console.log(one('AAAA'));
+			//Смайлик
+	
+	</script>
+</body>
+</html>

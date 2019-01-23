@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+      <meta charset="utf-8">
+     <title>TASK#2_EX#2_smiley</title>
+  </head>
+  <body onload="bodyLoad()">  
+
+    <canvas id="mycanvas" width="400" height="200"> </canvas>
+    <script type="text/javascript">
+
+   function  myFace () {  
+     var  c = document.getElementById ( "mycanvas" );  
+     var  draw = c.getContext ( "2d" );  
+     draw.beginPath ();  
+     draw.fillStyle =  "yellow" ;  
+     draw.arc (75, 75, 70, 0, Math.PI * 2,  true );  
+     draw.closePath ();  
+     draw.fill ();  
+    }
+
+   function myEye() {  
+     var c = document.getElementById("mycanvas");  
+     var eye = c.getContext("2d");  
+     eye.moveTo(55, 50);  
+     eye.beginPath();  
+     eye.fillStyle = "black";  
+     eye.arc(40, 50, 7, 0, Math.PI * 2, true);  
+     eye.closePath();  
+     eye.fill();  
+     eye.moveTo(103, 49); 
+
+     eye.beginPath();
+     eye.arc(110, 50, 7, 0, Math.PI * 2, true);
+     eye.fillStyle = 'red';
+     eye.fill();
+     eye.lineWidth = 2;
+     eye.strokeStyle = '#003300';
+     eye.stroke();
+
+  }
+
+   function mySmile() {  
+     var c = document.getElementById("mycanvas");  
+     var smile = c.getContext("2d");  
+     smile.moveTo(105, 75);  
+     smile.beginPath();  
+     smile.strokeStyle = "black";  
+     smile.arc(75, 75, 35, 0, Math.PI ,  false);  
+     smile.stroke();  
+    }  
+  
+  
+   function bodyLoad() {  
+     myFace();  
+     myEye();  
+     mySmile();  
+    }   
+     </script>
+  </body>
+</html>      
